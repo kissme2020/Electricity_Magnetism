@@ -9,6 +9,20 @@ import matplotlib.pyplot as plt
 
 
 #help function
+def GetChargeFormMass(mass):
+    """Assume mass is the mass of an object as a float. """
+    P_charge = 1.6e-19
+    E_charg = -1.6e-19
+    P_mass = 1.67e-27
+    E_mass = 0.0009e-27
+
+    # Charge per mass : Kg / (Kg/uncleon)
+    uncleons = mass / P_mass
+    # Protons / (C / Proton) 
+    result = (uncleons / 2) * P_charge  # Mass of proton and neutron is same .
+
+    return result #Return value's unit is Coulomb
+
 def GetMagenitude(q1, q2, d):
     """Assume q1 and q1 are charged on a particle in coulomb. 
     d is the magnitude of displacement between q1 and q2. 
